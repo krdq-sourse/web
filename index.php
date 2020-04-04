@@ -1,3 +1,4 @@
+<?php if ($_COOKIE['ver']) echo "<body onload=\"location.href='content.php'\"></body>" ?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -184,17 +185,19 @@
     <div class="col-md-6 col-md-offset-3 well">
         <h1>Авторизируйся</h1>
         <br>
-        <form method="post">
+        <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+        <form action="login.php" method="post">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" class="form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp"
-                       placeholder="Enter email">
+                       placeholder="Enter email" name="email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                     else.</small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control-sm" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control-sm" id="exampleInputPassword1" placeholder="Password"
+                       name="pass">
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -226,7 +229,7 @@
                         var jsonData = JSON.parse(response);
 
 
-                        if (jsonData.data != undefined) {
+                        if (jsonData.data == undefined) {
                             alert('Неверный пароль или логин')
 
                         } else {
