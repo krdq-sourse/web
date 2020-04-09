@@ -55,7 +55,7 @@ $topic = $_GET['r'];
             }
         }
         if ($_COOKIE['email'] == 'admin@gmail.com')
-            echo "<li role='presentation' class='action'><a href='admin.php'> Для Админа &nbsp;</a></li>";
+            echo "<li role='presentation' class='action'><a href='http://web/admin.php'> Для Админа &nbsp;</a></li>";
         $e = $_COOKIE['email'];
         echo "<li role='presentation'  class='action'><a href='http://web/logout.php'> Log out ($e) &nbsp;</a></li>";
         ?>
